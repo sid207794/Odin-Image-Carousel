@@ -1,0 +1,174 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url('./images/pexels-freestockpro-1227513.webp');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  font-family: 'Roboto', serif;
+  z-index: 1;
+  transition:
+    background-image,
+    0.2s ease-in-out;
+}
+
+.blurWall {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #161616ba;
+  backdrop-filter: blur(5px);
+  z-index: 2;
+}
+
+.frame {
+  display: grid;
+  grid-template: 10vh 65vh 10vh / 6vw 73vw 6vw;
+  height: 85vh;
+  width: 85vw;
+  background-color: #151515;
+  border: none;
+  border-radius: calc(25 * 100vmin / 730);
+  z-index: 3;
+}
+
+.frame > * {
+  background-color: transparent;
+}
+
+.frame .header {
+  grid-row: 1 / 2;
+  grid-column: 1 / 4;
+  border-top-left-radius: calc(25 * 100vmin / 730);
+  border-top-right-radius: calc(25 * 100vmin / 730);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame .header .text {
+  color: rgb(212, 212, 212);
+  font-size: calc(20 * 100vmin / 730);
+  letter-spacing: calc(50 * 100vw / 1536);
+  padding-left: calc(50 * 100vw / 1536);
+}
+
+.frame .content {
+  grid-row: 2 / 3;
+  grid-column: 1 / 4;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+  overflow: hidden;
+  margin-left: calc(10 * 100vw / 1536);
+  margin-right: calc(10 * 100vw / 1536);
+}
+
+.frame .leftButton {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  z-index: 4;
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  transition:
+    backdrop-filter 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+  margin-left: calc(10 * 100vw / 1536);
+  margin-right: calc(10 * 100vw / 1536);
+}
+
+.frame .leftButton .previous {
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.frame .leftButton .previous img {
+  filter: invert(90%);
+  opacity: 0.1;
+  transition:
+    opacity 0.2s ease-in-out,
+    filter 0.2s ease-in-out;
+}
+
+.frame .leftButton:hover {
+  background-color: #15151510;
+  backdrop-filter: blur(5px);
+}
+
+.frame .leftButton:hover .previous img {
+  filter: invert(100%);
+  opacity: 1;
+}
+
+.frame .rightButton {
+  grid-row: 2 / 3;
+  grid-column: 3 / 4;
+  z-index: 4;
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  transition:
+    backdrop-filter 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+  margin-left: calc(10 * 100vw / 1536);
+  margin-right: calc(10 * 100vw / 1536);
+}
+
+.frame .rightButton .next {
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.frame .rightButton .next img {
+  filter: invert(90%);
+  opacity: 0.1;
+  transition:
+    opacity 0.2s ease-in-out,
+    filter 0.2s ease-in-out;
+}
+
+.frame .rightButton:hover {
+  background-color: #15151510;
+  backdrop-filter: blur(5px);
+}
+
+.frame .rightButton:hover .next img {
+  filter: invert(100%);
+  opacity: 1;
+}
+
+.frame .footer {
+  grid-row: 3 / 4;
+  grid-column: 1 / 4;
+  border-bottom-left-radius: calc(25 * 100vmin / 730);
+  border-bottom-right-radius: calc(25 * 100vmin / 730);
+}
+
+.frame .content .images {
+  display: flex;
+}
+
+.frame .content .images img {
+  height: 65vh;
+  border: none;
+  border-radius: calc(25 * 100vmin / 730);
+}
+
+.frame .content .images img.visible {
+  display: block;
+}
+
+.frame .content .images img.hidden {
+  display: none;
+}
